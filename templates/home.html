@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+{% block title %}
+home
+{% endblock title %}
+
+{% block css %}
+    #home::before{
+        content: "";
+        position: absolute;
+        background: url(https://source.unsplash.com/1700x500/?forest,jungle) no-repeat center center/cover;
+        height: 500px;
+        width: 100%;
+        z-index :-1;
+        opacity:0.7
+    }
+    #home{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+    }
+    .home2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;    
+        font-family: 'Piazzolla', serif;
+        margin-top:200px;
+    }
+
+    .text{
+        margin-top: 50px;
+        opacity: 0.8;
+        
+        font-family: 'Piazzolla', serif;
+        color: black;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: white;
+    }
+    
+
+
+    #card1{
+        
+        background:url(/media/performers.jpg)no-repeat center/cover;
+        height: 300px;
+        width: 100%;
+        
+        opacity: 1;
+
+    }
+    #card2{
+        
+        background:url(/media/writer.jpg)no-repeat center/cover;
+        height: 300px;
+        width: 100%;
+        
+        opacity: 1;
+
+    }
+    #card3{
+        
+        background:url(/media/creater.jpg)no-repeat center/cover;
+        height: 300px;
+        width: 100%;
+        
+        opacity: 1;
+
+    }
+    #card4{
+        
+        background:url(/media/game.jpg)no-repeat center/cover;
+        height: 300px;
+        width: 100%;
+        opacity: 1;
+
+    }
+    #card5{
+        
+        background:url(/media/engineer.jpg)no-repeat center/cover;
+        height: 300px;
+        width: 100%;    
+        opacity: 1;
+
+    }
+    #card6{
+        
+        background:url(/media/learners.jpg)no-repeat center/cover;
+        height: 300px;
+        width: 100%;
+        opacity: 1;
+
+    }
+    .content{
+    width: fit-content;
+    margin-top: 250px;
+    border-radius: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    opacity: 0.9;
+    background-color: rgb(187, 25, 187);
+    color: white;
+    }
+    .cards{
+        border:1px solid white;
+    }
+    #display1{
+        margin-top:135px;
+    }
+    .write{
+        background: white;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      }
+      
+{% endblock css %}
+    
+
+
+{% block body %}
+
+    <div class="class="container" id="home">
+        <div class="text">
+            <h1 >5th June World Environment Day</h1>
+            <p style="font-weight: bold;">Greatest Threat To Our Planet is The Belief That Someone Else Will Save It</p>
+        </div>
+        
+    </div>
+
+    
+    <div class="home2 ">
+      <h3 style="color:purple;padding-top:70px;font-family: 'Abril Fatface', cursive;">_IT AGE_ </h3>
+      <h8 class="my-2">Where Technology Meets Creativity</h8>
+        <p style=" font-size:small; ">
+            {% if user.is_authenticated %}
+            <a style="text-decoration:none;color:#a737a7;" href="/blog">
+                Read the Month Magzine
+            </a>
+            {% else %}
+            <a  id="nav5" style="color:black;cursor:pointer;" data-toggle="modal" data-target="#login" data-whatever="@mdo" style="font-weight: bold;font-size:larger;">
+            Login to Read Month Blogs
+            </a>
+            {% endif %} 
+        </p>
+    </div>
+    
+
+<div class="row display" id="display1">
+    <div class="col-sm-4 cards" id="card1">
+        <div class="card content">
+            
+                <h5 class="card-title">Artists</h5>
+            
+        </div>
+    </div>
+    <div class="col-sm-4 cards" id="card2">
+      <div class="card content">
+        
+          <h5 class="card-title">Bloggers</h5>
+        
+      </div>
+    </div>
+    <div class="col-sm-4 cards" id="card3">
+      <div class="card content">
+        
+          <h5 class="card-title">Creators</h5>
+        
+      </div>
+    </div>
+</div>
+
+<div class="row display">
+    <div class="col-sm-4 cards" id="card4">
+        <div class="card content">
+            
+                <h5 class="card-title">Gamers</h5>
+            
+        </div>
+    </div>
+    <div class="col-sm-4 cards" id="card5">
+      <div class="card content">
+        
+          <h5 class="card-title">Engineers</h5>
+        
+      </div>
+    </div>
+    <div class="col-sm-4 cards" id="card6">
+      <div class="card content">
+        
+          <h5 class="card-title">Learners</h5>
+        
+      </div>
+    </div>
+</div>
+
+<div>
+    <div class="container " style="display: flex;align-items: center;justify-content: center;">
+      <div class="write">
+        <h7>FOR WRITERS AND CREATORS</h7><br>
+        <h3 class="h4 mb-2";">You Bring The Passion,<br> We'll Bring the Reach</h3><br>
+        <p class="text-muted" style="width: 246px;">Want to give your creativity a platform? Want to showcase your technical skills? Want to increasen your social account reach?
+           </p>
+
+        <p> <a id="creat_link" style='color:purple;' href="https://forms.gle/94W3ivGL7yYu7dNA6">Create For US</a> </p>
+      </div>
+    </div>
+  </div>
+
+ 
+{% endblock body %}
