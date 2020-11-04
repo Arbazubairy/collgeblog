@@ -32,29 +32,36 @@
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap" rel="stylesheet">
 <main class="main pt-4 my-4">
    
-    <div class="container">
+    <div class="container mb-4">
 
         <div class="row blogs_inliner">
             <div class="col-md-9">
 
-            <article class="card  article">
-                <header class="card-header" style="background-color: white;">
-                <div class="card-meta">
-                    <time class="timeago" style="font-family: 'PT Sans Caption', sans-serif;">{{posts.timeStamp}}</time>
-                </div>
-                <a href="{{posts.slug}}" style='color:black;'>
-                    <h4 class="card-title" style="font-family: 'PT Serif', serif;">{{posts.title}}</h4>
-                </a>
-                </header>
-                <a href="{{posts.slug}}">
-                <img class="card-img" src="https://source.unsplash.com/500x330/?iphone" alt="">
-                </a>
-                <div class="card-body" style="font-family: 'PT Sans Caption', sans-serif;">
-                <p class="card-text">{{posts.content|truncatechars:300}}</p>
-                </div>
-                <button type="button" class="btn btn-primary cont"> <a href="{{posts.slug}}" style="color:white;">Continue Reading</a> </button>
+                <article class="card  article">
+                
+                    <header class="card-header" style="background-color: white;">
+                    <div class="card-meta">
+                        <pr  style="font-family: 'PT Sans Caption', sans-serif;">A Blog By {{posts.author}}</pr>
+                    </div>
+                    <a href="{{posts.slug}}" style='color:black;'>
+                        <h4 class="card-title" style="font-family: 'PT Serif', serif;">{{posts.title}}</h4>
+                    </a>
+                    </header>
+                    <div class="row">
+                        <a href="{{posts.slug}}" class="col-md-4 mt-3 ml-5">
+                            <img class="card-img" src="{{posts.thumbnail.url}}" alt="">
+                        </a>
+                        <div class="col-md-6 mx-auto">
+                            <div class="card-body mb-2" style="font-family: 'PT Sans Caption', sans-serif;">
+                                <p class="card-text">{{posts.content|truncatechars:300}}</p>
+                                <a class="btn btn-primary" href="{{posts.slug}}" role="button">Continue Reading</a>                 
 
-            </article><!-- /.card -->
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </article><!-- /.card -->
             <hr>
             </div>
         </div>

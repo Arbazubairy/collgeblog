@@ -24,11 +24,11 @@ def blogcomments(request):
         postSno=request.POST.get("postSno")
         post=Post.objects.get(sno=postSno)
         parentsno=request.POST.get("parentsno")
-        parent=BlogComment.objects.get(blogsno=parentsno)
-        if parent == "":
+        if parentsno == "":
             comment=BlogComment(comment=comment,user=user,post=post)
             comment.save()
         else:
+            parent=BlogComment.objects.get(blogsno=parentsno)
             comment=BlogComment(comment=comment,user=user,post=post,parent=parent)
             comment.save()
     return redirect(f"/blog/{post.slug}")

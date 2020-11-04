@@ -23,3 +23,5 @@ class BlogComment(models.Model):
     post=models.ForeignKey(Post,on_delete=models.CASCADE)
     parent=models.ForeignKey('self',null=True,on_delete=models.CASCADE)
     timeStamp=models.DateTimeField(default=now)
+def __str__(self):
+    return 'comment by' + self.user.username

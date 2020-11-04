@@ -16,7 +16,7 @@ def about(request):
 def handleSignup(request):
     if request.method=="POST":
         fname=request.POST["fname"]
-        lname=request.POST["lname"]
+        
         username=request.POST["username"]
         email=request.POST["email"]
         pass1=request.POST["pass1"]
@@ -37,10 +37,9 @@ def handleSignup(request):
 
         creatUser = User.objects.create_user(username,email,pass1)
         creatUser.first_name=fname
-        creatUser.last_name=lname
         creatUser.save()
         messages.success(request,"SignUp Successful")
-        return rendirect('/')
+        return redirect('/')
     else:
         return HttpResponse("404 - Not Found")
 
